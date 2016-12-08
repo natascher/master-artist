@@ -1,5 +1,6 @@
 function setup() {
   createCanvas(300, 300, WEBGL)
+  frameRate(30)
 }
 
 const height = 50
@@ -31,14 +32,25 @@ function drawRotated(count, position) {
   pop()
 }
 
+let y = 0
+let increment = 1
+
 function draw() {
   camera(0, 0, 300)
   background(250)
 
-  const locY = (mouseY / height - 0.5) * (-8);
-  const locX = (mouseX / width - 0.5) * 8;
+  // const locY = (mouseY / height - 0.5) * (-8);
+  // const locX = (mouseX / width - 0.5) * 8;
 
-  pointLight(250, 250, 250, locX, locY, 0)
+  y = y + increment
+
+  if (y === 0) {
+    increment = 1
+  } else if (y === height) {
+    increment = -1
+  }
+
+  pointLight(250, 250, 250, y * 8, y * 8, 0)
 
   translate(0, -4 * radius)
 
