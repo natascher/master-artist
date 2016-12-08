@@ -5,11 +5,7 @@ function setup() {
 const height = 50
 const radius = 50
 
-function drawCones(count, position, current) {
-  position = position || {
-    x: 0,
-    y: 0
-  }
+function drawCones(count, current) {
   current = current || 1
 
   if (current > count) {
@@ -20,8 +16,8 @@ function drawCones(count, position, current) {
 
   push()
 
-  translate(position.x + 2 * radius, position.y)
-  drawCones(count, position, current + 1)
+  translate(2 * radius, 0)
+  drawCones(count, current + 1)
 
   pop()
 }
@@ -44,11 +40,23 @@ function draw() {
 
   pointLight(250, 250, 250, locX, locY, 0)
 
-  translate(-4 * radius, 0)
+  translate(0, -4 * radius)
+
+  drawRotated(1)
+
+  translate(-2 * radius, 2 * radius)
+
+  drawRotated(3)
+
+  translate(-2 * radius, 2 * radius)
 
   drawRotated(5)
 
-  translate(0, 3 * radius)
+  translate(2* radius, 2 * radius)
 
-  drawRotated(3, { x: 50, y: 2 * radius })
+  drawRotated(3)
+
+  translate(2 * radius, 2 * radius)
+
+  drawRotated(1)
 }
