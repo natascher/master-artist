@@ -3,8 +3,8 @@ function setup() {
   frameRate(30)
 }
 
-const height = 50
-const radius = 50
+const height = 60
+const radius = 60
 
 function drawCones(count, current) {
   current = current || 1
