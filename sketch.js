@@ -35,7 +35,7 @@ function drawRotated(count, position) {
 let y = 0
 let increment = 1
 
-function draw() {
+function draw_error() {
   camera(0, 0, 300)
   background(250)
 
